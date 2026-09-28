@@ -1,16 +1,32 @@
-# React + Vite
+# זוהר לבית
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+דף נחיתה לעסק שירותי בית של זוהר כהן: קיפול כביסה וגיהוץ, סידורי ארונות, והסעות לבית ספר ולחוגים.
 
-Currently, two official plugins are available:
+## פיתוח מקומי
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm install
+npm run dev
+```
 
-## React Compiler
+## בנייה
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm run build
+```
 
-## Expanding the Oxlint configuration
+React + Vite, מתארח ב-Firebase Hosting.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+---
+
+## על הפרויקט
+
+<img src="public/favicon.svg" width="56" height="56" alt="הלוגו של זוהר לבית: בית עם חלון של ארבע נקודות וניצוץ זהב" />
+
+**איך זה נבנה** — React + Vite, מעוצב ונבנה עם Claude Code (Claude Sonnet 5), כולל כמה סבבי עיצוב: פלטת צבעים ולוגו לקוחים ישירות מחומרי המיתוג האמיתיים של העסק (נייבי `#0F2D5B`, כחול `#3B82F6`, תכלת `#EAF4FF`, זהב `#FFD166`), פריסה א-סימטרית (בנטו, לא שלושה כרטיסים זהים), וביקורת "אנטי-סלופ" שהסירה תבניות טעונות-AI כמו יותר מדי eyebrows והירו עמוס מדי. מתארח ב-Firebase Hosting.
+
+**לינק לאתר החי** — [zohar-landing-page.web.app](https://zohar-landing-page.web.app)
+
+**קהל יעד** — הורים עסוקים עם ילדים, שמחפשים עזרה קבועה ואמינה בניהול משק הבית: לא שירות חד-פעמי, אלא צוות קבוע שחוזר כל שבוע.
+
+**המחשבה מאחורי זה** — האתר בנוי סביב רגע אחד קונקרטי: השעה 06:47, כשהכביסה מתערמת, הארון פתוח, וקבוצת ההורים כבר שלחה 47 הודעות על הסעה שמאחרת. במקום רשימת פיצ'רים, האתר מראה את אותו רגע פעמיים, לפני ואחרי, ונותן להבדל לדבר בעד עצמו.
