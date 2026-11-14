@@ -10,8 +10,8 @@ export default function Hero() {
             יש מי שדואג לבית, <span className="glow-word">גם כשאין לכם כוח.</span>
           </h1>
           <p className="sub">
-            קיפול כביסה וגיהוץ, סידורי ארונות, והסעות ילדים לבית הספר ולחוגים —
-            צוות קבוע שאפשר לסמוך עליו, כל שבוע.
+            קיפול כביסה וגיהוץ, סידורי ארונות, והסעות ילדים לבית הספר ולחוגים. צוות קבוע
+            שאפשר לסמוך עליו, כל שבוע.
           </p>
           <div className="cta-row">
             <a href="#contact" className="btn btn-primary btn-spark">

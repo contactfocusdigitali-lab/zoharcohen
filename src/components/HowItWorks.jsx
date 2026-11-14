@@ -1,29 +1,29 @@
 import Reveal from "./Reveal.jsx";
-import laundry640 from "@pictures/web/laundry-640.webp";
-import laundry1200 from "@pictures/web/laundry-1200.webp";
-import closet640 from "@pictures/web/closet-640.webp";
-import closet1200 from "@pictures/web/closet-1200.webp";
-import rides640 from "@pictures/web/rides-640.webp";
-import rides1200 from "@pictures/web/rides-1200.webp";
+import form640 from "@pictures/web/step-form-640.webp";
+import form1200 from "@pictures/web/step-form-1200.webp";
+import call640 from "@pictures/web/step-call-640.webp";
+import call1200 from "@pictures/web/step-call-1200.webp";
+import schedule640 from "@pictures/web/step-schedule-640.webp";
+import schedule1200 from "@pictures/web/step-schedule-1200.webp";
 
 const steps = [
   {
     num: 1,
     title: "משאירים פרטים",
     text: "שתי דקות, בלי טפסים ארוכים.",
-    image: { small: laundry640, large: laundry1200, alt: "ערימת בגדים מקופלים ומגהץ" },
+    image: { small: form640, large: form1200, alt: "טופס ״השאירו פרטים״ על לוח כתיבה, ליד טלפון" },
   },
   {
     num: 2,
     title: "שיחת היכרות קצרה",
     text: "מבינים מה הכי דחוף לכם עכשיו.",
-    image: { small: closet640, large: closet1200, alt: "ארון בגדים מסודר" },
+    image: { small: call640, large: call1200, alt: "טלפון עם שיחה נכנסת על שולחן, ליד כוס קפה ומחברת" },
   },
   {
     num: 3,
     title: "קובעים לו״ז קבוע",
     text: "אותו צוות, אותו יום, כל שבוע.",
-    image: { small: rides640, large: rides1200, alt: "ילדים מחייכים בהסעה" },
+    image: { small: schedule640, large: schedule1200, alt: "לוח שנה שולחני עם ימים מסומנים ושעון מעורר" },
   },
 ];
 

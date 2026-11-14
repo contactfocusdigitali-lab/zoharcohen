@@ -1,51 +1,70 @@
-import { ClockIcon, MessyPileIcon, NotifBubbleIcon, CheckIcon, CoffeeIcon } from "./icons.jsx";
+import { ClockIcon, CarIcon, StressIcon, CheckIcon, SmileIcon, HeartIcon } from "./icons.jsx";
 import Reveal from "./Reveal.jsx";
+import withPhoto from "@pictures/web/morning-with.webp";
+import withoutPhoto from "@pictures/web/morning-without.webp";
+
+const panels = [
+  {
+    key: "with",
+    label: "עם זוהר, הכול כבר מסודר",
+    photo: withPhoto,
+    alt: "תיק בית ספר ארוז, בקבוק מים ופתק עם לב וסמיילי",
+    items: [
+      { icon: CheckIcon, text: "הסעות לחוגים בזמן ובקלות" },
+      { icon: SmileIcon, text: "שקט נפשי ובוקר רגוע" },
+      { icon: HeartIcon, text: "יותר זמן בשביל מה שחשוב" },
+    ],
+  },
+  {
+    key: "without",
+    label: "בלי זוהר, הבוקר מתחיל בלחץ",
+    photo: withoutPhoto,
+    alt: "שעון מעורר על שולחן ליד ערימת כביסה ותיק",
+    items: [
+      { icon: ClockIcon, text: "ריצה בין חוג לחוג" },
+      { icon: CarIcon, text: "התעסקות בהסעות" },
+      { icon: StressIcon, text: "לחץ ודאגה" },
+    ],
+  },
+];
 
 export default function ParentStory() {
   return (
-    <section className="story">
+    <section className="morning" aria-labelledby="morning-title">
       <div className="wrap">
-        <h2 className="story-title">את מכירה את הבוקר הזה?</h2>
-        <div className="story-split">
-          <Reveal as="div" className="story-panel story-before">
-            <span className="story-time">06:47</span>
-            <div className="story-mess" aria-hidden="true">
-              <span className="mess-item mess-1">
-                <MessyPileIcon />
-              </span>
-              <span className="mess-item mess-2">
-                <ClockIcon />
-              </span>
-              <span className="mess-item mess-3">
-                <NotifBubbleIcon />
-              </span>
+        <div className="morning-head">
+          <h2 id="morning-title">
+            <span className="morning-underline">אותו בוקר. שתי מציאויות שונות.</span>
+          </h2>
+          <p className="sub">עם זוהר, הבוקר שלך יכול להיראות אחרת.</p>
+        </div>
+
+        <Reveal className="morning-grid">
+          {panels.map(({ key, label, photo, alt, items }) => (
+            <div className={`morning-card morning-${key}`} key={key}>
+              <h3 className="morning-pill">{label}</h3>
+              <ul className="morning-list">
+                {items.map(({ icon: Icon, text }) => (
+                  <li key={text}>
+                    <span className="morning-icon">
+                      <Icon />
+                    </span>
+                    {text}
+                  </li>
+                ))}
+              </ul>
+              <div className="morning-photo">
+                <img src={photo} alt={alt} loading="lazy" decoding="async" />
+              </div>
             </div>
-            <p className="story-line">
-              את רצה בין ערימת הכביסה, הארון הפתוח, וקבוצת ההורים שכבר שלחה 47
-              הודעות על ההסעה שמאחרת.
-            </p>
-          </Reveal>
-          <Reveal as="div" className="story-panel story-after">
-            <span className="story-time">06:47</span>
-            <ul className="story-checklist">
-              <li>
-                <CheckIcon />
-                הכביסה כבר מקופלת בארון
-              </li>
-              <li>
-                <CheckIcon />
-                הארונות מסודרים לפי עונה
-              </li>
-              <li>
-                <CheckIcon />
-                ההסעה כבר בדרך, עם המלווה הקבוע
-              </li>
-            </ul>
-            <p className="story-line story-payoff">
-              <CoffeeIcon />
-              ואת פשוט שותה קפה, בישיבה.
-            </p>
-          </Reveal>
+          ))}
+        </Reveal>
+
+        <div className="morning-cta">
+          <a href="#contact" className="btn btn-primary btn-large">
+            גם אני רוצה בוקר רגוע
+            <span aria-hidden="true">←</span>
+          </a>
         </div>
       </div>
     </section>

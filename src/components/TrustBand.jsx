@@ -5,7 +5,7 @@ const points = [
   {
     icon: UserGroupIcon,
     title: "אותו מלווה קבוע",
-    text: "לא מחליפים אנשים כל שבוע — הילדים מכירים מי מגיע.",
+    text: "לא מחליפים אנשים כל שבוע. הילדים מכירים מי מגיע.",
   },
   {
     icon: MessageIcon,
@@ -27,7 +27,7 @@ export default function TrustBand() {
           <span className="eyebrow">בטיחות וילדים</span>
           <h2>כשזה נוגע לילדים</h2>
           <p className="lead" style={{ marginTop: "0.75rem" }}>
-            הסעת ילדים היא לא עוד משימה ברשימה — זו שאלה של אמון. ככה אנחנו
+            הסעת ילדים היא לא עוד משימה ברשימה. זו שאלה של אמון, וככה אנחנו
             בונים אותו:
           </p>
         </Reveal>
