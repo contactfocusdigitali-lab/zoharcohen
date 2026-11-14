@@ -4,3 +4,6 @@ dist/
 .env.local
 .firebase/
 *.log
+
+# Design mockups / browser screenshots (may show personal browser details)
+Pictures/יומן כחול וסמלי איסוף.png
