@@ -7,6 +7,7 @@ import TrustBand from "./components/TrustBand.jsx";
 import ContactSection from "./components/ContactSection.jsx";
 import Footer from "./components/Footer.jsx";
 import WhatsAppFab from "./components/WhatsAppFab.jsx";
+import AccessibilityWidget from "./components/AccessibilityWidget.jsx";
 import PrivacyPolicy from "./legal/PrivacyPolicy.jsx";
 import AccessibilityStatement from "./legal/AccessibilityStatement.jsx";
 
@@ -43,6 +44,7 @@ export default function App() {
       </main>
       <Footer />
       <WhatsAppFab />
+      <AccessibilityWidget />
     </div>
   );
 }
