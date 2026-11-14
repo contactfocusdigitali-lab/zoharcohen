@@ -152,7 +152,7 @@ export default function ContactForm() {
         type="submit"
         disabled={status === "submitting"}
       >
-        {status === "submitting" ? "שולח…" : "בואי נדבר"}
+        {status === "submitting" ? "שולח…" : "בואו נדבר"}
       </button>
     </form>
   );

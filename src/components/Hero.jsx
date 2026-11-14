@@ -15,7 +15,7 @@ export default function Hero() {
           </p>
           <div className="cta-row">
             <a href="#contact" className="btn btn-primary btn-spark">
-              קבעו תור ראשון
+              בואו נדבר
             </a>
             <a href="#services" className="btn btn-secondary">
               לשירותים שלנו

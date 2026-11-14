@@ -18,7 +18,7 @@ export default function Header() {
             <a href="/#contact">יצירת קשר</a>
           </div>
           <a href="/#contact" className="btn btn-primary btn-small btn-spark">
-            קבעו תור ראשון
+            בואו נדבר
           </a>
         </nav>
       </div>
