@@ -83,7 +83,10 @@ const cmd = raw
 
 const rules = [
   // --- secrets ---
-  [/(^|[\s/\\=:<>|;&(])\.env(\b(?!\.example)|$)/, "accessing a .env file"],
+  // `.` and glob chars may precede it too: `.\.env` (PowerShell, after backslash stripping) and `*.env`.
+  [/(^|[\s/\\=:<>|;&(.*?])\.env(\b(?!\.example)|$)/, "accessing a .env file"],
+  // Wildcards that can expand to .env: `.e?v`, `.en*`, `.[e]nv`, `.{e,x}nv`, `.*`
+  [/(^|[\s/\\=:<>|;&(.])\.(?=[e?*[{])[^\s/;|&]*[?*[{]/, "wildcard that can match .env files"],
   [/firebase-tools\.json|configstore|\.config\/gcloud|application_default_credentials/, "accessing stored credentials"],
   [/access_token|refresh_token|id_token|authorization:\s*bearer|print-access-token|login:ci/, "handling auth tokens"],
   [/(^|[\s;&|(])(printenv|env|set|get-childitem env:|gci env:|dir env:)(\s*$|\s*[;&|)])/, "dumping environment variables"],
@@ -94,6 +97,8 @@ const rules = [
   [/\bgit\b[^;&|]*?\spush\b.*(\bmain\b|\bmaster\b)/, "push to main/master"],
   [/\bgit\b[^;&|]*?\spush\b.*(\s--delete\b|\s-d\b|\s:\S)/, "deleting a remote branch"],
   [/\bgit\b[^;&|]*?\spush\b.*\s--(all|mirror|tags)\b/, "bulk push"],
+  // Variables / command substitution in a push hide the real target (`B=main; git push origin $B`).
+  [/\bgit\b[^;&|]*?\spush\b[^;&|]*\$/, "git push with a variable or command substitution"],
   [/\bgit\b[^;&|]*?\s(filter-branch|filter-repo|replace)\b/, "rewriting git history"],
   [/\bgit\b[^;&|]*?\sreflog\s+(expire|delete)|\bgit\b[^;&|]*?\sgc\b.*--prune|\bgit\b[^;&|]*?\supdate-ref\s+-d/, "destroying git history"],
   [/\bgit\b[^;&|]*?\sreset\s+--hard/, "git reset --hard"],
