@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
-import { db } from "../firebase.js";
+import { db, appCheckSiteKey } from "../firebase.js";
 import { BUSINESS } from "../legal/business.js";
 
 const SERVICE_OPTIONS = [
@@ -154,6 +154,20 @@ export default function ContactForm() {
       >
         {status === "submitting" ? "שולח…" : "בואו נדבר"}
       </button>
+      {appCheckSiteKey && (
+        // Required by reCAPTCHA's terms because the floating badge is hidden (it overlapped the WhatsApp button).
+        <span className="form-note recaptcha-note">
+          האתר מוגן באמצעות reCAPTCHA, וחלים עליו{" "}
+          <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
+            מדיניות הפרטיות
+          </a>{" "}
+          ו
+          <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer">
+            תנאי השימוש
+          </a>{" "}
+          של Google.
+        </span>
+      )}
     </form>
   );
 }

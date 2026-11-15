@@ -1544,3 +1544,13 @@ html.a11y-cursor * {
     left: 1rem;
   }
 }
+
+/* reCAPTCHA (App Check) badge: hidden because it covered the WhatsApp button; the
+   attribution text required by reCAPTCHA terms is shown under the contact form instead. */
+.grecaptcha-badge {
+  visibility: hidden;
+}
+.recaptcha-note a {
+  color: var(--cta);
+  text-decoration: underline;
+}

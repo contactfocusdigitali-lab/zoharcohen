@@ -1,6 +1,19 @@
 node_modules/
 dist/
-.env
-.env.local
 .firebase/
 *.log
+
+# Secrets: never commit
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+service-account*.json
+*-service-account*.json
+*credentials*.json
+
+# Design mockups / browser screenshots (may show personal browser details)
+Pictures/יומן כחול וסמלי איסוף.png

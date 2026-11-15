@@ -1,6 +1,7 @@
 import LegalLayout from "./LegalLayout.jsx";
 import ContactDetails from "./ContactDetails.jsx";
 import { BUSINESS } from "./business.js";
+import { appCheckSiteKey } from "../firebase.js";
 
 export default function PrivacyPolicy() {
   return (
@@ -67,6 +68,13 @@ export default function PrivacyPolicy() {
         בדפדפן שלכם בלבד ולא נשלחות אלינו. אפשר לחסום או למחוק עוגיות בהגדרות הדפדפן, והאתר
         ימשיך לעבוד גם בלעדיהן.
       </p>
+      {appCheckSiteKey && (
+        <p>
+          כדי להגן על הטופס מפני ספאם ושימוש לרעה, האתר משתמש בשירות reCAPTCHA, שבודק את אופן
+          השימוש בדף כדי להבחין בין אדם לתוכנה אוטומטית. על השירות חלים מדיניות הפרטיות ותנאי
+          השימוש של Google.
+        </p>
+      )}
 
       <h2>הזכויות שלכם</h2>
       <p>
